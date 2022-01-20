@@ -1,8 +1,8 @@
-import * as Three from "three";
-
-import { Octree } from "../components/Three/Modules/Math/Octree";
+import * as Three from 'three';
 
 import { DESIGN, OBJECTS } from '@/utils/constants';
+import { Octree } from '../components/Three/Modules/Math/Octree';
+
 
 export const randomInteger = (min, max) => {
   const rand = min + Math.random() * (max + 1 - min);
@@ -18,7 +18,7 @@ export const plusOrMinus = () => {
 export const loaderDispatchHelper = (store, field) => {
   store.dispatch('preloader/preloadOrBuilt', field).then(() => {
     store.dispatch('preloader/isAllLoadedAndBuilt');
-  }).catch((error) => { console.log(error); });
+  }).catch((error) => { console.error(error); });
 };
 
 export const messagesByViewDispatchHelper = (scope, view, name, data) => {
@@ -35,7 +35,7 @@ export const degreesToRadians = (degrees) => {
 };
 
 export const radiansToDegrees = (radians) => {
-  return radians * (180/ Math.PI);
+  return radians * (180 / Math.PI);
 };
 
 export const randomPointInCircle = (radius, x, y) => {
@@ -117,11 +117,9 @@ export const isEnemyCanShot = (scope, enemy) => {
       scope.number = Math.min(fixNot(scope.result.distance), fixNot(scope.resultDoors.distance), fixNot(scope.resultEnemies.distance));
       return scope.number > 10;
     }
-  } else {
-    if (scope.result || scope.resultDoors) {
-      scope.number = Math.min(fixNot(scope.result.distance), fixNot(scope.resultDoors.distance));
-      return scope.number > 10;
-    }
+  } else if (scope.result || scope.resultDoors) {
+    scope.number = Math.min(fixNot(scope.result.distance), fixNot(scope.resultDoors.distance));
+    return scope.number > 10;
   }
   return true;
 };

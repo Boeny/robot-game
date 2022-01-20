@@ -35,16 +35,14 @@ export default ({
       localStorage.setItem(LOCALSTORAGE.DIRECTIONX, scope.hero.getHeroDirection().x);
       localStorage.setItem(LOCALSTORAGE.DIRECTIONY, scope.hero.getHeroDirection().y);
       localStorage.setItem(LOCALSTORAGE.DIRECTIONZ, scope.hero.getHeroDirection().z);
+    } else if (scope.levelFrom > scope.level) {
+      localStorage.setItem(LOCALSTORAGE.DIRECTIONX, DESIGN.HERO.START[`level${scope.level}`].end.direction.x);
+      localStorage.setItem(LOCALSTORAGE.DIRECTIONY, DESIGN.HERO.START[`level${scope.level}`].end.direction.y);
+      localStorage.setItem(LOCALSTORAGE.DIRECTIONZ, DESIGN.HERO.START[`level${scope.level}`].end.direction.z);
     } else {
-      if (scope.levelFrom > scope.level) {
-        localStorage.setItem(LOCALSTORAGE.DIRECTIONX, DESIGN.HERO.START[`level${scope.level}`].end.direction.x);
-        localStorage.setItem(LOCALSTORAGE.DIRECTIONY, DESIGN.HERO.START[`level${scope.level}`].end.direction.y);
-        localStorage.setItem(LOCALSTORAGE.DIRECTIONZ, DESIGN.HERO.START[`level${scope.level}`].end.direction.z);
-      } else {
-        localStorage.setItem(LOCALSTORAGE.DIRECTIONX, DESIGN.HERO.START[`level${scope.level}`].start.direction.x);
-        localStorage.setItem(LOCALSTORAGE.DIRECTIONY, DESIGN.HERO.START[`level${scope.level}`].start.direction.y);
-        localStorage.setItem(LOCALSTORAGE.DIRECTIONZ, DESIGN.HERO.START[`level${scope.level}`].start.direction.z);
-      }
+      localStorage.setItem(LOCALSTORAGE.DIRECTIONX, DESIGN.HERO.START[`level${scope.level}`].start.direction.x);
+      localStorage.setItem(LOCALSTORAGE.DIRECTIONY, DESIGN.HERO.START[`level${scope.level}`].start.direction.y);
+      localStorage.setItem(LOCALSTORAGE.DIRECTIONZ, DESIGN.HERO.START[`level${scope.level}`].start.direction.z);
     }
   },
 

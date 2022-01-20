@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { API_URL, LOCALSTORAGE } from '@/utils/constants';
+import { API_URL, LOCALSTORAGE } from './constants';
 
 axios.defaults.withCredentials = false;
 

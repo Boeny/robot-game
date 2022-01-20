@@ -7,36 +7,20 @@
 
 <script>
 import * as Three from 'three';
-
 import { mapActions, mapGetters } from 'vuex';
-
-// Controls
 import { PointerLockControls } from '@/components/Three/Modules/Controls/PointerLockControls';
-
-// World
-import { Octree } from '../Modules/Math/Octree';
-
-// Stats
-// import Stats from '@/components/Three/Modules/Utils/Stats';
-
-// Config
 import {
   isBackend,
   LOCALSTORAGE,
-  DESIGN
+  DESIGN,
 } from '@/utils/constants';
-
-// Utils
 import storage from '@/utils/storage';
-
-// Mixins
 import layout from '@/components/Layout/layout';
 import hero from '@/components/Layout/hero';
-
-// Modules
 import AudioBus from '@/components/Three/Scene/AudioBus';
 import EventsBus from '@/components/Three/Scene/EventsBus';
 import World from '@/components/Three/Scene/World';
+import { Octree } from '../Modules/Math/Octree';
 
 export default {
   name: 'Scene',
@@ -151,7 +135,7 @@ export default {
 
     this.ray = new Three.Ray(
       new Three.Vector3(),
-      new Three.Vector3()
+      new Three.Vector3(),
     );
     this.raycaster = new Three.Raycaster(
       new Three.Vector3(),
@@ -398,7 +382,7 @@ export default {
             });
             this.setScale({
               field: 'weight',
-              value: -1 * DESIGN.EFFECTS.red.weight
+              value: -1 * DESIGN.EFFECTS.red.weight,
             });
             this.events.messagesByIdDispatchHelper(this, 1, 'startNoDamaged');
             this.events.heroOnUpgradeDispatchHelper(this);
@@ -429,7 +413,7 @@ export default {
             });
             this.setScale({
               field: 'weight',
-              value: -1 * DESIGN.EFFECTS.orange.weight
+              value: -1 * DESIGN.EFFECTS.orange.weight,
             });
             this.events.messagesByIdDispatchHelper(this, 1, 'startNoTired');
             this.events.heroOnUpgradeDispatchHelper(this);
@@ -454,7 +438,7 @@ export default {
             });
             this.setScale({
               field: 'weight',
-              value: -1 * DESIGN.EFFECTS.green.weight
+              value: -1 * DESIGN.EFFECTS.green.weight,
             });
             this.events.messagesByIdDispatchHelper(this, 1, 'startTimeMachine');
             this.events.heroOnUpgradeDispatchHelper(this);
@@ -480,7 +464,7 @@ export default {
               });
               this.setScale({
                 field: 'weight',
-                value: -1 * DESIGN.EFFECTS.purple.weight
+                value: -1 * DESIGN.EFFECTS.purple.weight,
               });
               this.events.messagesByIdDispatchHelper(this, 1, 'startGain');
               this.events.heroOnUpgradeDispatchHelper(this);

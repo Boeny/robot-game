@@ -125,16 +125,14 @@ const actions = {
       user.directionX = scope.hero.getHeroDirection().x;
       user.directionY = scope.hero.getHeroDirection().y;
       user.directionZ = scope.hero.getHeroDirection().z;
+    } else if (levelFrom > level) {
+      user.directionX = DESIGN.HERO.START[`level${scope.level}`].end.direction.x;
+      user.directionY = DESIGN.HERO.START[`level${scope.level}`].end.direction.y;
+      user.directionZ = DESIGN.HERO.START[`level${scope.level}`].end.direction.z;
     } else {
-      if (levelFrom > level) {
-        user.directionX = DESIGN.HERO.START[`level${scope.level}`].end.direction.x;
-        user.directionY = DESIGN.HERO.START[`level${scope.level}`].end.direction.y;
-        user.directionZ = DESIGN.HERO.START[`level${scope.level}`].end.direction.z;
-      } else {
-        user.directionX = DESIGN.HERO.START[`level${scope.level}`].start.direction.x;
-        user.directionY = DESIGN.HERO.START[`level${scope.level}`].start.direction.y;
-        user.directionZ = DESIGN.HERO.START[`level${scope.level}`].start.direction.z;
-      }
+      user.directionX = DESIGN.HERO.START[`level${scope.level}`].start.direction.x;
+      user.directionY = DESIGN.HERO.START[`level${scope.level}`].start.direction.y;
+      user.directionZ = DESIGN.HERO.START[`level${scope.level}`].start.direction.z;
     }
 
     commit('setIsFetching', true);
@@ -267,7 +265,9 @@ const mutations = {
     state.message = state.message + 1;
   },
 
-  showMessage: (state, { id, view, name, data }) => {
+  showMessage: (state, {
+    id, view, name, data,
+  }) => {
     messages = state.messages;
     messages.push([id, view, name, data]);
     state.messages = messages;

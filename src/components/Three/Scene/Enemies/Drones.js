@@ -39,7 +39,7 @@ function Drones() {
       height / 1.25,
     );
     const pseudoLargeGeometry = pseudoGeometry.clone();
-    pseudoLargeGeometry.scale(2, 2, 2)
+    pseudoLargeGeometry.scale(2, 2, 2);
 
     new GLTFLoader().load(
       './images/models/Objects/Drone.glb',

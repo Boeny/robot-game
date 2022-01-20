@@ -445,7 +445,7 @@ function World() {
         scope.render();
 
 
-        const pseudoGeometry = new Three.SphereBufferGeometry(DESIGN.HERO.HEIGHT / 2,  4, 4);
+        const pseudoGeometry = new Three.SphereBufferGeometry(DESIGN.HERO.HEIGHT / 2, 4, 4);
         const pseudoMaterial = new Three.MeshStandardMaterial({
           color: DESIGN.COLORS.white,
           side: Three.DoubleSide,

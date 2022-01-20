@@ -1,5 +1,4 @@
-import {mapActions, mapGetters} from 'vuex';
-
+import { mapActions, mapGetters } from 'vuex';
 import { isBackend, DESIGN } from '@/utils/constants';
 import storage from '@/utils/storage';
 
@@ -23,7 +22,7 @@ export default {
       if (!isBackend) {
         this.setLevel({
           level: 1,
-          levelFrom: 0
+          levelFrom: 0,
         });
 
         storage.updateHero(0, false);
@@ -53,21 +52,20 @@ export default {
         /* setTimeout(() => {
           window.location.reload();
         }, 3000); */
-      } else {
-        if (isWin) this.saveUser({
+      } else if (isWin) {
+        this.saveUser({
           scope: this,
           isF5: false,
           level: this.level,
           levelFrom: this.level,
         });
-        else {
-          this.updateUser({
-            scope: this,
-            isFirst: false,
-            level: this.level,
-            levelFrom: this.levelFrom,
-          });
-        }
+      } else {
+        this.updateUser({
+          scope: this,
+          isFirst: false,
+          level: this.level,
+          levelFrom: this.levelFrom,
+        });
       }
     },
 
@@ -99,21 +97,20 @@ export default {
         else storage.updateUser(0, false);
 
         window.location.reload(true);
-      } else {
-        if (levelFrom !== 0) this.saveUser({
+      } else if (levelFrom !== 0) {
+        this.saveUser({
           scope: this,
           isF5: false,
           level,
           levelFrom,
         });
-        else {
-          this.updateUser({
-            scope: this,
-            isFirst: false,
-            level,
-            levelFrom,
-          });
-        }
+      } else {
+        this.updateUser({
+          scope: this,
+          isFirst: false,
+          level,
+          levelFrom,
+        });
       }
     },
   },

@@ -211,12 +211,11 @@ import { mapActions, mapGetters } from 'vuex';
 
 import { DESIGN, OBJECTS } from '@/utils/constants';
 
+import { getNotPartOfName } from '@/utils/utilities';
+import Scale from '@/components/Layout/Scale.vue';
 import layout from './layout';
 import hero from './hero';
 
-import { getNotPartOfName } from '@/utils/utilities';
-
-import Scale from '@/components/Layout/Scale.vue';
 
 export default {
   name: 'UI',

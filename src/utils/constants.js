@@ -2,7 +2,7 @@ export const isBackend = true;
 
 const isProd = process.env.NODE_ENV === 'production';
 const apiUrl = process.env.VUE_APP_API_URL;
-export const API_URL = isProd ? apiUrl || '//api.robot-game.ru' : apiUrl || 'http://localhost:8083';
+export const API_URL = isProd ? apiUrl || '//....ru' : apiUrl || 'http://localhost:8083';
 
 export const LOCALSTORAGE = {
   ROBOTID: 'robotID',
@@ -483,7 +483,7 @@ export const LOCALES = {
       gadgetsgate: 'You need a PC keyboard to play',
       chromegate: 'In order to play, open in the Google Chrome (or Yandex) browser (Firefox not recommended)',
       gameover: 'GAME OVER',
-      win: `MISSION<br />COMPLETED`,
+      win: 'MISSION<br />COMPLETED',
       gameovebuttonStart: 'Start location',
       gameovebuttonStartFirst: 'First location',
       gameovebuttonNext: 'Next level',
@@ -504,7 +504,7 @@ export const LOCALES = {
       control11: 'Pause: P',
 
       legend: 'Legend',
-      legendtext: `Earth, distant future. People a long time ago killed each other in nuclear wars, finding out who is right, who is left, who white, and who is red and so on. Several races bred on unbombed atolls in the Pacific Ocean humanoid robots. For example, more human-like, imitating organic, bisexual and personal relationships Drinking companions, which transform animals and vegetation into life force and special effects. Inside them, through thin strong tubes, a special a fermented organic mix similar to human wine, setting them in motion. Or more machine-like same-sex Cyber ​​Dancers preaching meditative Zen-Noise. Gender and religious differences between cultures, of course, raged a fierce war.<br /><br />A couple of young drinking buddies set off on a honeymoon trip across the ocean. But the boat suddenly started leaking and they barely made it to the nearest atoll. The island, beautiful at first glance, turned out to be a dangerous trap, as it had long been chosen for meditation by the Dancers.<br /><br />The Robot Drinker wakes up on the floor of the torture chamber of the same-sex prison ... The tanks are empty ... His tormentors apparently decided that he was no longer a tenant and left him to die ... On the wall there is a portrait of the legendary Last President - the ideological forerunner and idol of the Dancers - a man who once unleashed the last war in the history of mankind ...`,
+      legendtext: 'Earth, distant future. People a long time ago killed each other in nuclear wars, finding out who is right, who is left, who white, and who is red and so on. Several races bred on unbombed atolls in the Pacific Ocean humanoid robots. For example, more human-like, imitating organic, bisexual and personal relationships Drinking companions, which transform animals and vegetation into life force and special effects. Inside them, through thin strong tubes, a special a fermented organic mix similar to human wine, setting them in motion. Or more machine-like same-sex Cyber ​​Dancers preaching meditative Zen-Noise. Gender and religious differences between cultures, of course, raged a fierce war.<br /><br />A couple of young drinking buddies set off on a honeymoon trip across the ocean. But the boat suddenly started leaking and they barely made it to the nearest atoll. The island, beautiful at first glance, turned out to be a dangerous trap, as it had long been chosen for meditation by the Dancers.<br /><br />The Robot Drinker wakes up on the floor of the torture chamber of the same-sex prison ... The tanks are empty ... His tormentors apparently decided that he was no longer a tenant and left him to die ... On the wall there is a portrait of the legendary Last President - the ideological forerunner and idol of the Dancers - a man who once unleashed the last war in the history of mankind ...',
 
       rules: 'Rules',
       weight: 'Backpack capacity: ',
@@ -518,7 +518,7 @@ export const LOCALES = {
       },
       difficultytext: 'Duration of effects from flowers: ',
       difficultytext2: 'seconds',
-      difficultytext3: `In addition, the distance at which enemies react<br />(use stealthy movement),<br />as well as the power of explosions and weapons,<br />depends on the level of difficulty`,
+      difficultytext3: 'In addition, the distance at which enemies react<br />(use stealthy movement),<br />as well as the power of explosions and weapons,<br />depends on the level of difficulty',
     },
     messages: {
       message1: {
@@ -533,7 +533,7 @@ export const LOCALES = {
         endNoDamaged: 'The invulnerability effeect is over',
         endNoTired: 'The robot gets tired of running again',
         startTimeMachine: 'The robot used a portable time machine!',
-        startGain: `The robot threw itself a purple gain!<br />The power of the weapon has increased for some time!`,
+        startGain: 'The robot threw itself a purple gain!<br />The power of the weapon has increased for some time!',
         endTimeMachine: 'Time acceleration effect is over!',
         endGain: 'The effect of the pumped wine cannon is over!',
         pick: 'The robot picked up: ',
@@ -551,7 +551,7 @@ export const LOCALES = {
         full: 'Backpack is full!!!',
       },
       message3: {
-        enemiesBeside: `Enemies spotted nearby!<br />The robot should be careful!`,
+        enemiesBeside: 'Enemies spotted nearby!<br />The robot should be careful!',
         notEnemiesBeside: 'No one around...',
         discovered: 'The robot disturbed ',
         destroyed: 'The robot destroyed ',
@@ -655,7 +655,7 @@ export const LOCALES = {
       gadgetstext: 'Для того чтобы играть нужна клавиатура персонального компьютера',
       chromegate: 'Для того чтобы играть откройте в браузере Google Chrome (или Яндекс), Firefox не рекомендуется',
       gameover: 'КОНЕЦ ИГРЫ',
-      win: `МИССИЯ<br />ВЫПОЛНЕННА`,
+      win: 'МИССИЯ<br />ВЫПОЛНЕНА',
       gameovebuttonStart: 'С локации',
       gameovebuttonStartFirst: 'С первой локации',
       gameovebuttonNext: 'След. уровень',
@@ -676,7 +676,7 @@ export const LOCALES = {
       control11: 'Пауза: P',
 
       legend: 'Легенда',
-      legendtext: `Земля, далекое будущее. Люди давным-давно перебили друг-друга в ядерных войнах, выясняя кто правый, кто левый, кто белый, а кто красный и прочее. На не затронутых бомбардировками атоллах в Тихом Океане размножилось несколько рас человекоподобных роботов. Например, более человекоподобные, имитирующие органику, двуполость и личные отношения Собутыльники, которые перерабатывают животных и растительность в жизненную силу и спецэффекты. Внутри них, по тонким крепким трубкам, течет специальный сброженный органический микс, схожий с человеческим вином, приводя их в движение. Или более машиноподбные однополые Кибер-Танцоры, проповедующие медитативный Дзинь-Нойз. На почве гендерных и религиозных разногласий между культурами, конечно же, понеслась жестокая война.<br /><br />Пара молодых Собутыльников отправились в свадебное путешествие по океану. Но катер внезапно дал течь и они с трудом дотянули до ближайшего атолла. Прекрасный на первый взгляд остров оказался опасной ловушкой, так как был давно облюбован для медитаций Танцорами.<br /><br />Робот-Собутыльник приходит в себя на полу пыточной камеры тюрьмы Однополых... Баки пусты... Его мучители, видимо, решили что он уже не жилец, и оставили подыхать... На стене висит портрет легендарного Последнего Президента - идеологического предтечи и кумира Танцоров - человека, когда-то развязавшего последнюю в истории человечества войну...`,
+      legendtext: 'Земля, далекое будущее. Люди давным-давно перебили друг-друга в ядерных войнах, выясняя кто правый, кто левый, кто белый, а кто красный и прочее. На не затронутых бомбардировками атоллах в Тихом Океане размножилось несколько рас человекоподобных роботов. Например, более человекоподобные, имитирующие органику, двуполость и личные отношения Собутыльники, которые перерабатывают животных и растительность в жизненную силу и спецэффекты. Внутри них, по тонким крепким трубкам, течет специальный сброженный органический микс, схожий с человеческим вином, приводя их в движение. Или более машиноподбные однополые Кибер-Танцоры, проповедующие медитативный Дзинь-Нойз. На почве гендерных и религиозных разногласий между культурами, конечно же, понеслась жестокая война.<br /><br />Пара молодых Собутыльников отправились в свадебное путешествие по океану. Но катер внезапно дал течь и они с трудом дотянули до ближайшего атолла. Прекрасный на первый взгляд остров оказался опасной ловушкой, так как был давно облюбован для медитаций Танцорами.<br /><br />Робот-Собутыльник приходит в себя на полу пыточной камеры тюрьмы Однополых... Баки пусты... Его мучители, видимо, решили что он уже не жилец, и оставили подыхать... На стене висит портрет легендарного Последнего Президента - идеологического предтечи и кумира Танцоров - человека, когда-то развязавшего последнюю в истории человечества войну...',
 
       rules: 'Правила',
       weight: 'Вместимость рюкзака: ',
@@ -690,7 +690,7 @@ export const LOCALES = {
       },
       difficultytext: 'Время действия эффектов от цветов: ',
       difficultytext2: 'cекунд',
-      difficultytext3: `Кроме этого, от уровня сложности<br />зависит расстояние на котором реагируют враги<br />(используйте скрытное передвижение),<br />а также мощность взрывов и оружия`,
+      difficultytext3: 'Кроме этого, от уровня сложности<br />зависит расстояние на котором реагируют враги<br />(используйте скрытное передвижение),<br />а также мощность взрывов и оружия',
     },
     messages: {
       message1: {
@@ -705,7 +705,7 @@ export const LOCALES = {
         endNoDamaged: 'Эффект неуязвимости закончился',
         endNoTired: 'Робот снова устает от бега',
         startTimeMachine: 'Робот включил портативную машину времени!',
-        startGain: `Робот задвинулся пурпурным драйвом!<br />Сила оружия выросла на некоторое время!`,
+        startGain: 'Робот задвинулся пурпурным драйвом!<br />Сила оружия выросла на некоторое время!',
         endTimeMachine: 'Эффект ускорения времени закончился!',
         endGain: 'Эффект прокаченного виномета закончился!',
         pick: 'Робот подобрал: ',
@@ -723,7 +723,7 @@ export const LOCALES = {
         full: 'Рюкзак переполнен!!!',
       },
       message3: {
-        enemiesBeside: `Рядом замечены враги!<br/>Роботу стоит быть осторожнее!`,
+        enemiesBeside: 'Рядом замечены враги!<br/>Роботу стоит быть осторожнее!',
         notEnemiesBeside: 'Рядом никого...',
         discovered: 'Робот потревожил',
         destroyed: 'Робот уничтожил',

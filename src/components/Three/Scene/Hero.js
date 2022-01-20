@@ -1,24 +1,21 @@
 /* eslint-disable dot-notation,prefer-destructuring */
 import * as Three from 'three';
-
 import { GLTFLoader } from '@/components/Three/Modules/Utils/GLTFLoader';
-import { Capsule } from '../Modules/Math/Capsule';
-
 import {
   isBackend,
   LOCALSTORAGE,
   DESIGN,
-  OBJECTS
+  OBJECTS,
 } from '@/utils/constants';
-
-import HeroWeapon from './Weapon/HeroWeapon';
-
 import {
   loaderDispatchHelper,
   messagesByViewDispatchHelper,
   getNotPartOfName,
   updateHeroEnemiesOctree,
 } from '@/utils/utilities';
+import { Capsule } from '../Modules/Math/Capsule';
+import HeroWeapon from './Weapon/HeroWeapon';
+
 
 function Hero() {
   let playerCollider;
@@ -32,7 +29,8 @@ function Hero() {
   let speed;
 
   let damageClock;
-  let damageTime = 0; // eslint-disable-line no-unused-vars // глюк какой-то?
+  // eslint-disable-next-line no-unused-vars
+  let damageTime = 0; // глюк какой-то?
 
   let enduranceClock;
   let enduranceTime = 0;

@@ -1,11 +1,11 @@
 /* eslint-disable dot-notation,prefer-destructuring */
 import * as Three from 'three';
 
-import { Octree } from '../../Modules/Math/Octree';
 
 import { DESIGN, OBJECTS } from '@/utils/constants';
 
 import { loaderDispatchHelper } from '@/utils/utilities';
+import { Octree } from '../../Modules/Math/Octree';
 
 function Doors() {
   const audioLoader = new Three.AudioLoader();

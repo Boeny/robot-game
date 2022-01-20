@@ -111,7 +111,7 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
+import { mapGetters } from 'vuex';
 
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
 

@@ -45,17 +45,14 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-
+import { mapGetters } from 'vuex';
 import ScreenHelper from '@/utils/screen-helper';
-
-import layout from './layout';
-
 import Gate from '@/components/Layout/Gate.vue';
 import Preloader from '@/components/Layout/Preloader.vue';
 import Scene from '@/components/Three/Scene/Scene.vue';
 import UI from '@/components/Layout/UI.vue';
 import Instructions from '@/components/Layout/Instructions.vue';
+import layout from './layout';
 
 export default {
   name: 'Layout',

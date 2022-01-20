@@ -1,8 +1,7 @@
 {
   "name": "three-vue-start",
   "version": "0.1.0",
-  "description": "Browser classic custom FPS Game on Three and Vue.",
-  "private": true,
+  "description": "Browser ... Game on Three and Vue.",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

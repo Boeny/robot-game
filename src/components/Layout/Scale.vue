@@ -39,7 +39,7 @@ export default {
       default: false,
       required: false,
     },
-  }
+  },
 };
 </script>
 

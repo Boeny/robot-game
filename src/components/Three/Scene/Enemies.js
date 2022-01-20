@@ -12,7 +12,7 @@ import {
   isEnemyCanShot,
   isEnemyCanFlyDown,
   isEnemyCanMoveForward,
-} from "@/utils/utilities";
+} from '@/utils/utilities';
 
 import Spiders from './Enemies/Spiders';
 import Drones from './Enemies/Drones';
@@ -174,8 +174,8 @@ function Enemies() {
     enemy.velocity.add(new Three.Vector3(
       (Math.random() + 0.5) * 25,
       (Math.random() + 0.5) * 25,
-      (Math.random() + 0.5) * 25),
-    );
+      (Math.random() + 0.5) * 25,
+    ));
     enemy.randomX = plusOrMinus();
     enemy.randomZ = plusOrMinus();
 
@@ -323,7 +323,6 @@ function Enemies() {
         if ((enemy.mode === DESIGN.ENEMIES.mode.active
             && enemy.distanceToHero > enemy.distance)
             || enemy.mode === DESIGN.ENEMIES.mode.idle) {
-
           if (isEnemyCanMoveForward(scope, enemy)) {
             // Решение на прыжок
             if ((enemy.mode === DESIGN.ENEMIES.mode.active

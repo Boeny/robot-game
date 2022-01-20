@@ -1,7 +1,8 @@
 import {
   isBackend,
   DESIGN,
-  LOCALSTORAGE } from '@/utils/constants';
+  LOCALSTORAGE,
+} from '@/utils/constants';
 
 const passes = ['red', 'orange', 'green', 'purple', 'blue'];
 
@@ -9,11 +10,11 @@ const getPassesFromStorage = () => {
   const passesNow = [];
 
   if (Number(localStorage.getItem(LOCALSTORAGE.LEVEL)) === 0) return ['blue']; // for sandbox
-  else {
-    passes.forEach((pass) => {
-      if (Number(localStorage.getItem(LOCALSTORAGE[`PASS${pass.toUpperCase()}`])) === 1) passesNow.push(pass);
-    });
-  }
+
+  passes.forEach((pass) => {
+    if (Number(localStorage.getItem(LOCALSTORAGE[`PASS${pass.toUpperCase()}`])) === 1) passesNow.push(pass);
+  });
+
   return passesNow;
 };
 
