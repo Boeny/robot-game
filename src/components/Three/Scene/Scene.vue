@@ -8,7 +8,6 @@
 <script>
 import * as Three from 'three';
 import { mapActions, mapGetters } from 'vuex';
-import { PointerLockControls } from '@/components/Three/Modules/Controls/PointerLockControls';
 import {
   isBackend,
   LOCALSTORAGE,
@@ -17,10 +16,11 @@ import {
 import storage from '@/utils/storage';
 import layout from '@/components/Layout/layout';
 import hero from '@/components/Layout/hero';
-import AudioBus from '@/components/Three/Scene/AudioBus';
-import EventsBus from '@/components/Three/Scene/EventsBus';
-import World from '@/components/Three/Scene/World';
+import { PointerLockControls } from '../Modules/Controls/PointerLockControls';
 import { Octree } from '../Modules/Math/Octree';
+import AudioBus from './AudioBus';
+import EventsBus from './EventsBus';
+import World from './World';
 
 export default {
   name: 'Scene',

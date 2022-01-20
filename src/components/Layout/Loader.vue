@@ -1,4 +1,3 @@
-<!-- eslint-disable max-len -->
 <template>
   <div class="loader spin">
     <svg
@@ -16,7 +15,6 @@
     </svg>
   </div>
 </template>
-<!-- eslint-enable max-len -->
 
 <script>
 export default {

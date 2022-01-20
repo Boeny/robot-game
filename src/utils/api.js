@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-import { API_URL, LOCALSTORAGE } from './constants';
+import { API_URL } from './constants';
 
 axios.defaults.withCredentials = false;
 
 export default ({
   setUser() {
-    return this.post('/user', { robotID: localStorage.getItem(LOCALSTORAGE.ROBOTID) });
+    return this.get('/index');
   },
 
   saveUser(user) {

@@ -82,15 +82,15 @@ const isLevelStart = (level) => {
 const actions = {
   setUser: ({ commit }) => {
     commit('setIsFetching', true);
-    API.setUser().then((res) => {
-      localStorage.setItem(LOCALSTORAGE.ROBOTID, res.data.user.id);
+    API.setUser().then(() => {
+      localStorage.setItem(LOCALSTORAGE.ROBOTID, 0);
 
       commit('setLevel', {
-        level: isLevelStart(res.data.user.level),
-        levelFrom: res.data.user.levelFrom,
+        level: isLevelStart(0),
+        levelFrom: 0,
       });
       commit('setUser');
-      commit('hero/setUser', res.data.user, { root: true });
+      commit('hero/setUser', {}, { root: true });
       commit('setIsFetching', false);
     });
   },

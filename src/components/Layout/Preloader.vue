@@ -13,7 +13,7 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import Loader from '@/components/Layout/Loader.vue';
+import Loader from './Loader.vue';
 
 export default {
   name: 'Preloader',
