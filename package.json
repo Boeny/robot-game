@@ -1,125 +1,138 @@
 {
-  "name": "three-vue-start",
-  "version": "0.1.0",
-  "description": "Browser ... Game on Three and Vue.",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
-    "stylelint": "stylelint ./src/styles ./src/components"
-  },
-  "author": "Levon Gambaryan",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ushliypakostnik/three-vue-start"
-  },
-  "dependencies": {
-    "@panter/vue-i18next": "^0.15.1",
-    "axios": ">=0.21.1",
-    "core-js": "^2.6.5",
-    "i18next": "^17.0.16",
-    "i18next-browser-languagedetector": "^4.0.1",
-    "js-cookie": "^2.2.1",
-    "swiper": "^5.4.5",
-    "three": "^0.124.0",
-    "three-mtl-loader": "^1.0.2",
-    "vue": "^2.6.10",
-    "vue-awesome-swiper": "^4.1.1",
-    "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-plugin-unit-jest": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
-    "@vue/eslint-config-airbnb": "^4.0.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.1.0",
-    "stylelint": "^10.1.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "three-vue-start",
+    "version": "0.1.0",
+    "description": "Browser ... Game on Three and Vue.",
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "test:unit": "vue-cli-service test:unit",
+        "stylelint": "stylelint ./src/styles ./src/components"
     },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/airbnb"
-    ],
-    "rules": {
-      "arrow-body-style": "off",
-      "implicit-arrow-linebreak": "off",
-      "vue/max-attributes-per-line": "off",
-      "max-len": "off",
-      "no-param-reassign": 0,
-      "no-multi-assign": 0,
-      "no-plusplus": 0,
-      "no-shadow": 0,
-      "default-case": 0,
-      "no-nested-ternary": 0,
-      "vue/valid-v-for": 0
+    "author": "Levon Gambaryan",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ushliypakostnik/three-vue-start"
     },
-    "parserOptions": {
-      "parser": "babel-eslint"
+    "dependencies": {
+        "@panter/vue-i18next": "^0.15.1",
+        "axios": ">=0.21.1",
+        "core-js": "^2.6.5",
+        "i18next": "^17.0.16",
+        "i18next-browser-languagedetector": "^4.0.1",
+        "js-cookie": "^2.2.1",
+        "swiper": "^5.4.5",
+        "three": "^0.124.0",
+        "three-mtl-loader": "^1.0.2",
+        "vue": "^2.6.10",
+        "vue-awesome-swiper": "^4.1.1",
+        "vue-router": "^3.0.3",
+        "vuex": "^3.0.1"
     },
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)"
-        ],
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^3.11.0",
+        "@vue/cli-plugin-eslint": "^3.11.0",
+        "@vue/cli-plugin-unit-jest": "^3.11.0",
+        "@vue/cli-service": "^3.11.0",
+        "@vue/eslint-config-airbnb": "^4.0.0",
+        "@vue/test-utils": "1.0.0-beta.29",
+        "babel-core": "7.0.0-bridge.0",
+        "babel-eslint": "^10.0.1",
+        "babel-jest": "^23.6.0",
+        "eslint": "^5.16.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "node-sass": "^4.9.0",
+        "sass-loader": "^7.1.0",
+        "stylelint": "^10.1.0",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "eslintConfig": {
+        "root": true,
         "env": {
-          "jest": true
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "@vue/airbnb"
+        ],
+        "rules": {
+            "camelcase": "error",
+            "no-debugger": "error",
+            "no-mixed-spaces-and-tabs": "error",
+            "no-invalid-regexp": "error",
+            "no-return-await": "error",
+            "no-var": "error",
+            "arrow-body-style": 0,
+            "implicit-arrow-linebreak": 0,
+            "vue/max-attributes-per-line": "error",
+            "max-len": "error",
+            "no-param-reassign": "error",
+            "no-multi-assign": "error",
+            "no-plusplus": "error",
+            "no-shadow": "error",
+            "default-case": "error",
+            "no-nested-ternary": 0,
+            "vue/valid-v-for": "error",
+            "import/prefer-default-export": 0,
+            "no-implicit-coercion": "error",
+            "no-trailing-spaces": "error",
+            "no-multiple-empty-lines": "error",
+            "no-await-in-loop": 0,
+            "indent": ["error", 4],
+            "no-underscore-dangle": [2, { "allow": ["__filename", "__dirname"] }]
+        },
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "overrides": [
+            {
+                "files": [
+                    "**/__tests__/*.{j,t}s?(x)"
+                ],
+                "env": {
+                    "jest": true
+                }
+            }
+        ]
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
         }
-      }
-    ]
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ],
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "jsx",
+            "json",
+            "vue"
+        ],
+        "transform": {
+            "^.+\\.vue$": "vue-jest",
+            ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+            "^.+\\.jsx?$": "babel-jest"
+        },
+        "transformIgnorePatterns": [
+            "/node_modules/"
+        ],
+        "moduleNameMapper": {
+            "^@/(.*)$": "<rootDir>/src/$1"
+        },
+        "snapshotSerializers": [
+            "jest-serializer-vue"
+        ],
+        "testMatch": [
+            "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
+        ],
+        "testURL": "http://localhost/",
+        "watchPlugins": [
+            "jest-watch-typeahead/filename",
+            "jest-watch-typeahead/testname"
+        ]
     }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json",
-      "vue"
-    ],
-    "transform": {
-      "^.+\\.vue$": "vue-jest",
-      ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
-      "^.+\\.jsx?$": "babel-jest"
-    },
-    "transformIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
-    },
-    "snapshotSerializers": [
-      "jest-serializer-vue"
-    ],
-    "testMatch": [
-      "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
-    ],
-    "testURL": "http://localhost/",
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
-    ]
-  }
 }
