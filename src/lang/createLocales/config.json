@@ -1,0 +1,6 @@
+{
+    "mainLanguageTemplateFolder": "ru",
+    "resultBundleFile": "locales.json",
+    "languageConstantsFile": "constants.js",
+    "excludeFolders": ["createLocales"]
+}

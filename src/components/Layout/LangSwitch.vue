@@ -9,8 +9,8 @@
       <a v-if="value !== language"
         href="#"
         @click.prevent="changeLanguage(value)"
-      >{{ value }}</a>
-      <span v-else>{{ value }}</span>
+    >{{ value }}</a>
+    <span v-else>{{ value }}</span>
     </li>
   </ul>
 </template>
@@ -18,33 +18,28 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
-import { LANGUAGES } from '@/utils/constants';
+import { LANGUAGES } from '@/lang/constants';
 
 export default {
-  name: 'LangSwitch',
+    name: 'LangSwitch',
 
-  computed: {
-    ...mapGetters({
-      language: 'layout/language',
-    }),
+    computed: {
+        ...mapGetters({
+            language: 'layout/language',
+        }),
 
-    languages() {
-      const languages = LANGUAGES.map((language) => {
-        return language.name;
-      });
-      return languages;
+        languages: () => LANGUAGES,
     },
-  },
 
-  methods: {
-    ...mapActions({
-      changeLanguage: 'layout/changeLanguage',
-    }),
+    methods: {
+        ...mapActions({
+            changeLanguage: 'layout/changeLanguage',
+        }),
 
-    changeLanguage(language) {
-      this.$i18n.i18next.changeLanguage(language);
-      this.$store.dispatch('layout/changeLanguage', language);
+        changeLanguage(language) {
+            this.$i18n.i18next.changeLanguage(language);
+            this.$store.dispatch('layout/changeLanguage', language);
+        },
     },
-  },
 };
 </script>

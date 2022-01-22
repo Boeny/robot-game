@@ -201,7 +201,7 @@
         type="button"
         v-if="isGameOver && isWin && level === 0"
         @click.prevent.stop="reloadToStartFromSandbox"
-      >{{ $t('layout.gameovebuttonNext') }}</button>
+      >{{ $t('layout.gameOverButtonNext') }}</button>
     </div>
   </div>
 </template>
@@ -218,133 +218,133 @@ import hero from './hero';
 
 
 export default {
-  name: 'UI',
+    name: 'UI',
 
-  mixins: [
-    layout,
-    hero,
-  ],
+    mixins: [
+        layout,
+        hero,
+    ],
 
-  components: {
-    Scale,
-  },
-
-  data() {
-    return {
-      lastMagazine: null,
-    };
-  },
-
-  mounted() {
-    this.lastMagazine = this.magazine;
-  },
-
-  computed: {
-    ...mapGetters({
-      level: 'layout/level',
-
-      messages: 'layout/messages',
-
-      isModal: 'layout/isModal',
-      modalId: 'layout/modalId',
-
-      isGameOver: 'layout/isGameOver',
-      isWin: 'layout/isWin',
-    }),
-
-    magazine() {
-      return Math.floor((this.ammo - 1) / DESIGN.EFFECTS.bottle.ammo) + 1;
+    components: {
+        Scale,
     },
 
-    ammoMagazine() {
-      return this.magazine < 10 ? `0${this.magazine}` : this.magazine;
+    data() {
+        return {
+            lastMagazine: null,
+        };
     },
 
-    maxWeight() {
-      return DESIGN.HERO.MAXWEIGHT;
+    mounted() {
+        this.lastMagazine = this.magazine;
     },
 
-    stringWeight() {
-      return this.weight < 0 ? 0 : this.weight < 10 ? `0${this.weight}` : this.weight;
-    },
-  },
+    computed: {
+        ...mapGetters({
+            level: 'layout/level',
 
-  methods: {
-    ...mapActions({
-      setModal: 'layout/setModal',
+            messages: 'layout/messages',
 
-      setGameOver: 'layout/setGameOver',
+            isModal: 'layout/isModal',
+            modalId: 'layout/modalId',
 
-      setScale: 'hero/setScale',
-    }),
+            isGameOver: 'layout/isGameOver',
+            isWin: 'layout/isWin',
+        }),
 
-    flower(value) {
-      return value < 10 ? `0${value}` : value;
-    },
+        magazine() {
+            return Math.floor((this.ammo - 1) / DESIGN.EFFECTS.bottle.ammo) + 1;
+        },
 
-    isPass(pass) {
-      return this.passes.includes(DESIGN.PASSES[pass]);
-    },
+        ammoMagazine() {
+            return this.magazine < 10 ? `0${this.magazine}` : this.magazine;
+        },
 
-    getObjectName(name) {
-      const objectType = this.getObjectType(name);
-      const objectsName = getNotPartOfName(name, objectType);
+        maxWeight() {
+            return DESIGN.HERO.MAXWEIGHT;
+        },
 
-      switch (objectType) {
-        case OBJECTS.PASSES.name:
-          return this.$t(`objects.pass.${objectsName}`);
-        case OBJECTS.FLOWERS.name:
-          return this.$t(`objects.flower.${objectsName}.name`);
-        case OBJECTS.BOTTLES.name:
-          return this.$t(`objects.${name}.declination`);
-        default:
-          return null;
-      }
+        stringWeight() {
+            return this.weight < 0 ? 0 : this.weight < 10 ? `0${this.weight}` : this.weight;
+        },
     },
 
-    getObjectTypeName(name) {
-      if (name.includes(OBJECTS.PASSES.name)) return this.$t('objects.pass.name');
-      if (name.includes(OBJECTS.FLOWERS.name)) return this.$t('objects.flower.name');
-      if (name.includes(OBJECTS.BOTTLES.name)) return this.$t('objects.bottle.declination');
-      return null;
+    methods: {
+        ...mapActions({
+            setModal: 'layout/setModal',
+
+            setGameOver: 'layout/setGameOver',
+
+            setScale: 'hero/setScale',
+        }),
+
+        flower(value) {
+            return value < 10 ? `0${value}` : value;
+        },
+
+        isPass(pass) {
+            return this.passes.includes(DESIGN.PASSES[pass]);
+        },
+
+        getObjectName(name) {
+            const objectType = this.getObjectType(name);
+            const objectsName = getNotPartOfName(name, objectType);
+
+            switch (objectType) {
+            case OBJECTS.PASSES.name:
+                return this.$t(`objects.pass.${objectsName}`);
+            case OBJECTS.FLOWERS.name:
+                return this.$t(`objects.flower.${objectsName}.name`);
+            case OBJECTS.BOTTLES.name:
+                return this.$t(`objects.${name}.declination`);
+            default:
+                return null;
+            }
+        },
+
+        getObjectTypeName(name) {
+            if (name.includes(OBJECTS.PASSES.name)) return this.$t('objects.pass.name');
+            if (name.includes(OBJECTS.FLOWERS.name)) return this.$t('objects.flower.name');
+            if (name.includes(OBJECTS.BOTTLES.name)) return this.$t('objects.bottle.declination');
+            return null;
+        },
+
+        getObjectType(name) {
+            if (name.includes(OBJECTS.PASSES.name)) return OBJECTS.PASSES.name;
+            if (name.includes(OBJECTS.FLOWERS.name)) return OBJECTS.FLOWERS.name;
+            if (name.includes(OBJECTS.BOTTLES.name)) return OBJECTS.BOTTLES.name;
+            return null;
+        },
+
+        modalSrc(modal) {
+            return `/images/modals/level${this.level}/modal${this.modalId}__${modal}.jpg`;
+        },
     },
 
-    getObjectType(name) {
-      if (name.includes(OBJECTS.PASSES.name)) return OBJECTS.PASSES.name;
-      if (name.includes(OBJECTS.FLOWERS.name)) return OBJECTS.FLOWERS.name;
-      if (name.includes(OBJECTS.BOTTLES.name)) return OBJECTS.BOTTLES.name;
-      return null;
-    },
+    watch: {
+        health(value) {
+            if (value < 0) this.setGameOver();
+        },
 
-    modalSrc(modal) {
-      return `/images/modals/level${this.level}/modal${this.modalId}__${modal}.jpg`;
-    },
-  },
+        endurance(value) {
+            if (value < 0) {
+                this.setScale({
+                    field: 'isHeroTired',
+                    value: true,
+                });
+            }
+        },
 
-  watch: {
-    health(value) {
-      if (value < 0) this.setGameOver();
+        magazine(value) {
+            if (value < this.lastMagazine) {
+                this.setScale({
+                    field: 'weight',
+                    value: -1 * DESIGN.EFFECTS.bottle.weight,
+                });
+            }
+            this.lastMagazine = value;
+        },
     },
-
-    endurance(value) {
-      if (value < 0) {
-        this.setScale({
-          field: 'isHeroTired',
-          value: true,
-        });
-      }
-    },
-
-    magazine(value) {
-      if (value < this.lastMagazine) {
-        this.setScale({
-          field: 'weight',
-          value: -1 * DESIGN.EFFECTS.bottle.weight,
-        });
-      }
-      this.lastMagazine = value;
-    },
-  },
 };
 </script>
 

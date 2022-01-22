@@ -2,9 +2,10 @@
     "name": "three-vue-start",
     "version": "0.1.0",
     "description": "Browser ... Game on Three and Vue.",
+     "type": "module",
     "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
+        "lang": "node --trace-warnings src/lang/createLocales",
+        "serve": "npm run lang && vue-cli-service serve",
         "lint": "vue-cli-service lint",
         "test:unit": "vue-cli-service test:unit",
         "stylelint": "stylelint ./src/styles ./src/components"
@@ -43,8 +44,10 @@
         "eslint": "^5.16.0",
         "eslint-plugin-vue": "^5.0.0",
         "node-sass": "^4.9.0",
+        "path": "^0.12.7",
         "sass-loader": "^7.1.0",
         "stylelint": "^10.1.0",
+        "url": "^0.11.0",
         "vue-template-compiler": "^2.6.10"
     },
     "eslintConfig": {
@@ -80,7 +83,8 @@
             "no-multiple-empty-lines": "error",
             "no-await-in-loop": 0,
             "indent": ["error", 4],
-            "no-underscore-dangle": [2, { "allow": ["__filename", "__dirname"] }]
+            "no-underscore-dangle": [2, { "allow": ["__filename", "__dirname"] }],
+            "no-continue": 0
         },
         "parserOptions": {
             "parser": "babel-eslint"

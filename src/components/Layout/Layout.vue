@@ -20,7 +20,7 @@
             class="layout__button button"
             type="button"
             @click.prevent.stop="play"
-          >{{ $t('layout.startbutton') }}</button>
+          >{{ $t('layout.startButton') }}</button>
 
           <!-- Для перехода из песочницы -->
           <button
@@ -28,7 +28,7 @@
             type="button"
             v-if="level === 0"
             @click.prevent.stop="reloadToStartFromSandbox"
-          >{{ $t('layout.gameovebuttonNext') }}</button>
+          >{{ $t('layout.gameOverButtonNext') }}</button>
         </div>
       </div>
     </Preloader>
@@ -55,54 +55,52 @@ import Instructions from './Instructions.vue';
 import layout from './layout';
 
 export default {
-  name: 'Layout',
+    name: 'Layout',
 
-  mixins: [layout],
+    mixins: [layout],
 
-  components: {
-    Gate,
-    Preloader,
-    Scene,
-    UI,
-    Instructions,
-  },
-
-  data() {
-    return {
-      isDesktop: null,
-      isBro: ScreenHelper.isBro(),
-    };
-  },
-
-  beforeDestroy() {
-    window.removeEventListener('resize', this.onWindowResize, false);
-  },
-
-  mounted() {
-    window.addEventListener('resize', this.onWindowResize, false);
-    this.onWindowResize();
-  },
-
-  computed: {
-    ...mapGetters({
-      isPause: 'layout/isPause',
-      isModal: 'layout/isModal',
-
-      level: 'layout/level',
-
-      isGameLoaded: 'preloader/isGameLoaded',
-    }),
-  },
-
-  methods: {
-    onWindowResize() {
-      this.isDesktop = !!ScreenHelper.isDesktop();
+    components: {
+        Gate,
+        Preloader,
+        Scene,
+        UI,
+        Instructions,
     },
 
-    play() {
-      this.$eventHub.$emit('lock');
+    data() {
+        return {
+            isDesktop: null,
+            isBro: ScreenHelper.isBro(),
+        };
     },
-  },
+
+    beforeDestroy() {
+        window.removeEventListener('resize', this.onWindowResize, false);
+    },
+
+    mounted() {
+        window.addEventListener('resize', this.onWindowResize, false);
+        this.onWindowResize();
+    },
+
+    computed: {
+        ...mapGetters({
+            isPause: 'layout/isPause',
+            isModal: 'layout/isModal',
+            level: 'layout/level',
+            isGameLoaded: 'preloader/isGameLoaded',
+        }),
+    },
+
+    methods: {
+        onWindowResize() {
+            this.isDesktop = !!ScreenHelper.isDesktop();
+        },
+
+        play() {
+            this.$eventHub.$emit('lock');
+        },
+    },
 };
 </script>
 
