@@ -1,6 +1,6 @@
 {
     "name": "three-vue-start",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Browser ... Game on Three and Vue.",
      "type": "module",
     "scripts": {
